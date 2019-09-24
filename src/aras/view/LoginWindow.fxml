@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="aras.controller.LoginWindowController">
+   <children>
+      <Button fx:id="login" layoutX="297.0" layoutY="225.0" mnemonicParsing="false" onAction="#loginPressed" prefHeight="56.0" prefWidth="120.0" text="Login" />
+      <Label layoutX="105.0" layoutY="100.0" text="Email address" />
+      <Label layoutX="105.0" layoutY="159.0" text="Password" />
+      <TextField fx:id="mailAdress" layoutX="241.0" layoutY="94.0" />
+      <PasswordField fx:id="password" layoutX="241.0" layoutY="159.0" />
+      <Label fx:id="error" layoutX="332.0" layoutY="303.0" text="Label" />
+   </children>
+</AnchorPane>
