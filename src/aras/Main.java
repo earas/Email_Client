@@ -16,7 +16,8 @@ public class Main extends Application {
 
         MyViewFactory viewFactory = new MyViewFactory(new EmailManager());
         viewFactory.showLoginWindow();
-
+        //viewFactory.showOptionsWindow();
+        //viewFactory.updateStyle();
 
 
 

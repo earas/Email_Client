@@ -6,13 +6,13 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="aras.controller.LoginWindowController">
+<AnchorPane maxHeight="350.0" maxWidth="470.0" minHeight="350.0" minWidth="470.0" prefHeight="350.0" prefWidth="470.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <Button fx:id="login" layoutX="297.0" layoutY="225.0" mnemonicParsing="false" onAction="#loginPressed" prefHeight="56.0" prefWidth="120.0" text="Login" />
-      <Label layoutX="105.0" layoutY="100.0" text="Email address" />
-      <Label layoutX="105.0" layoutY="159.0" text="Password" />
-      <TextField fx:id="mailAdress" layoutX="241.0" layoutY="94.0" />
-      <PasswordField fx:id="password" layoutX="241.0" layoutY="159.0" />
-      <Label fx:id="error" layoutX="332.0" layoutY="303.0" text="Label" />
+      <Button fx:id="login" layoutX="190.0" layoutY="225.0" mnemonicParsing="false" onAction="#loginPressed" prefHeight="56.0" prefWidth="120.0" text="Login" />
+      <Label layoutX="53.0" layoutY="100.0" text="Email address" />
+      <Label layoutX="53.0" layoutY="159.0" text="Password" />
+      <TextField fx:id="mailAdress" layoutX="189.0" layoutY="94.0" />
+      <PasswordField fx:id="password" layoutX="189.0" layoutY="159.0" />
+      <Label fx:id="error" layoutX="223.0" layoutY="297.0" text="Label" />
    </children>
 </AnchorPane>
