@@ -20,6 +20,7 @@ public class MyViewFactory {
     private ColorTheme colorTheme = ColorTheme.DARK;
     private  FontSize fontSize = FontSize.MEDIUM;
     private ArrayList<Stage> activeStages;
+    private boolean mainViewInitialized = false;
 
     public MyViewFactory(EmailManager emailManager){
         this.emailManager = emailManager;
@@ -43,6 +44,10 @@ public class MyViewFactory {
         this.fontSize = fontSize;
     }
 
+    public boolean isMainViewInitialized(){
+        return  mainViewInitialized;
+    }
+
     public void showLoginWindow() {
         BaseController controller = new LoginWindowController(emailManager,this,"LoginWindow.fxml");
         initializeStage(controller);
@@ -52,6 +57,7 @@ public class MyViewFactory {
     public void showMainWindow(){
         BaseController controller = new MainWindowController(emailManager,this,"MainWindow.fxml");
         initializeStage(controller);
+        mainViewInitialized = true;
     }
 
     public void showOptionsWindow(){
