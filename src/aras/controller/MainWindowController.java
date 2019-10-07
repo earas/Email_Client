@@ -1,6 +1,7 @@
 package aras.controller;
 
 import aras.EmailManager;
+import aras.controller.services.MessageRendererService;
 import aras.model.EmailMessage;
 import aras.model.EmailTreeItem;
 import aras.model.SizeInteger;
@@ -15,6 +16,7 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.web.WebView;
 import javafx.util.Callback;
 
+import javax.mail.Message;
 import java.net.URL;
 import java.util.Date;
 import java.util.ResourceBundle;
@@ -46,6 +48,7 @@ public class MainWindowController extends BaseController implements Initializabl
     @FXML
     private TableColumn<EmailMessage, String> recipientCol;
 
+    private MessageRendererService messageRendererService;
 
 
 
@@ -71,7 +74,26 @@ public class MainWindowController extends BaseController implements Initializabl
         setUpEmailTableView();
         setUpFolderSelection();
         setUpBoldRows();
+        setUpMessageRendererService();
+        setUpMessageSelection();
 
+    }
+
+    private void setUpMessageSelection() {
+        emailsTableView.setOnMouseClicked(event ->{
+            EmailMessage emailMessage = emailsTableView.getSelectionModel().getSelectedItem();
+            if(emailMessage != null){
+                messageRendererService.setEmailMessage(emailMessage);
+                messageRendererService.restart();
+                //restart because start method can be used only 1 times
+            }
+
+        });
+
+    }
+
+    private void setUpMessageRendererService() {
+        messageRendererService = new MessageRendererService(emailWebView.getEngine());
     }
 
     private void setUpBoldRows() {
