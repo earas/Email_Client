@@ -39,7 +39,7 @@
                 </Menu>
             </menus>
         </MenuBar>
-        <TreeView fx:id="emailsTreeView" layoutY="36.0" prefHeight="665.0" prefWidth="246.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="36.0" />
+        <TreeView fx:id="emailsTreeView" layoutY="36.0" prefHeight="665.0" prefWidth="246.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="36.0" />
         <TableView fx:id="emailsTableView" layoutX="244.0" layoutY="36.0" prefHeight="225.0" prefWidth="817.0" AnchorPane.leftAnchor="244.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="36.0">
             <columns>
                 <TableColumn fx:id="senderCol" prefWidth="84.0" text="Sender" />
