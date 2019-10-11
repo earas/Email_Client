@@ -61,4 +61,6 @@ private void updateName(){
 }
 
 
+    public void addEmailToTop() {
+    }
 }
