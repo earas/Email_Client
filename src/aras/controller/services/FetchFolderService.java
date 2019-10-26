@@ -66,7 +66,7 @@ public class FetchFolderService extends Service<Void> {
                 for(int i = 0; i < messageCountEvent.getMessages().length; i++){
                     try {
                         Message message = folder.getMessage(folder.getMessageCount() - i);
-                        emailTreeItem.addEmailToTop();
+                        emailTreeItem.addEmailToTop(message);
                     } catch (MessagingException e) {
                         e.printStackTrace();
                     }
@@ -75,7 +75,7 @@ public class FetchFolderService extends Service<Void> {
 
             @Override
             public void messagesRemoved(MessageCountEvent messageCountEvent) {
-                System.out.println("message deleted event");
+                System.out.println("message deleted event"+ messageCountEvent);
             }
         });
 
