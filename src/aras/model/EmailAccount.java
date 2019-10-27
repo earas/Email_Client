@@ -1,5 +1,6 @@
 package aras.model;
 
+import javax.mail.Session;
 import javax.mail.Store;
 import java.util.Properties;
 
@@ -7,6 +8,7 @@ public class EmailAccount {
 
     private String address;
     private String password;
+    private Session session;
 
     public String getAddress() {
         return address;
@@ -46,4 +48,20 @@ public class EmailAccount {
         properties.put("mail.smtps.auth", "true");
         properties.put("outgoingHost", "smtp.gmail.com");
     }
+
+    public Session getSession(){
+        return session;
+    }
+
+    public void setSession(Session session){
+        this.session =  session;
+    }
+
+
+    public String toString(){
+        return address;
+    }
+
 }
+
+

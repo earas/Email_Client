@@ -1,15 +1,10 @@
 package aras.view;
-
 import aras.EmailManager;
-import aras.controller.BaseController;
-import aras.controller.LoginWindowController;
-import aras.controller.MainWindowController;
-import aras.controller.OptionsWindowController;
+import aras.controller.*;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-
 import javax.swing.text.ViewFactory;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -25,7 +20,6 @@ public class MyViewFactory {
     public MyViewFactory(EmailManager emailManager){
         this.emailManager = emailManager;
         activeStages = new ArrayList<Stage>();
-
     }
 
     public ColorTheme getColorTheme() {
@@ -51,7 +45,6 @@ public class MyViewFactory {
     public void showLoginWindow() {
         BaseController controller = new LoginWindowController(emailManager,this,"LoginWindow.fxml");
         initializeStage(controller);
-
     }
 
     public void showMainWindow(){
@@ -60,18 +53,21 @@ public class MyViewFactory {
         mainViewInitialized = true;
     }
 
+    public void showComposeMessageWindow(){
+        BaseController controller = new ComposeMessageWindowController(emailManager,this,"ComposeMessageWindow.fxml");
+        initializeStage(controller);
+        mainViewInitialized = true;
+    }
+
     public void showOptionsWindow(){
         BaseController controller = new OptionsWindowController(emailManager,this,"OptionsWindow.fxml");
         initializeStage(controller);
-
     }
 
     private void initializeStage(BaseController baseController){
-
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource(baseController.getFxmlName()));
         fxmlLoader.setController(baseController);
         Parent parent;
-
         try{
             parent = fxmlLoader.load();
         } catch(IOException e){

@@ -5,6 +5,8 @@ import aras.controller.services.FolderUpdaterService;
 import aras.model.EmailAccount;
 import aras.model.EmailMessage;
 import aras.model.EmailTreeItem;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.scene.control.TreeItem;
 
 import javax.mail.Flags;
@@ -33,6 +35,11 @@ public class EmailManager {
         return this.folderList;
     }
 
+    private ObservableList<EmailAccount> emailAccounts = FXCollections.observableArrayList();
+
+    public ObservableList<EmailAccount> getEmailAccounts(){
+    return this.emailAccounts;
+    }
 
 
     public EmailManager(){
@@ -58,6 +65,7 @@ public class EmailManager {
 
     public void addEmailAccount(EmailAccount emailAccount)
     {
+        emailAccounts.add(emailAccount);
         EmailTreeItem<String> treeItem = new EmailTreeItem<String>(emailAccount.getAddress());
        // treeItem.setExpanded(true);
         FetchFolderService fetchFolderService = new FetchFolderService(emailAccount.getStore(), treeItem, folderList);

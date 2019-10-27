@@ -4,6 +4,7 @@ import javafx.concurrent.Service;
 import javafx.concurrent.Task;
 
 import javax.mail.Folder;
+import java.util.Iterator;
 import java.util.List;
 
 public class FolderUpdaterService extends Service {
@@ -28,6 +29,12 @@ public class FolderUpdaterService extends Service {
                                 folder.getMessageCount();
                             }
                         }
+                        /*for (Iterator<Folder> iterator = folderList.iterator(); iterator.hasNext();) {
+                            Folder folder = iterator.next();
+                            if(folder.getType() != Folder.HOLDS_FOLDERS && folder.isOpen()){
+                                folder.getMessageCount();
+                            }
+                        }*/
                     }catch (Exception e){
                         e.printStackTrace();
                     }
